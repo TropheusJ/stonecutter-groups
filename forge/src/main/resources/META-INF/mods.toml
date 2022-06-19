@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[41,)"
+issueTrackerURL = "https://github.com/TropheusJ/stonecutter-groups/issues"
+license = "MIT"
+
+[[mods]]
+modId = "stonecutter_groups"
+version = "${version}"
+displayName = "Stonecutter Groups"
+authors = "Tropheus Jay"
+description = '''
+Provides a new group-based method of creating stonecutter recipes.
+'''
+#logoFile = "" TODO
+
+[[dependencies.stonecutter_groups]]
+modId = "forge"
+mandatory = true
+versionRange = "[41,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.stonecutter_groups]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19,)"
+ordering = "NONE"
+side = "BOTH"

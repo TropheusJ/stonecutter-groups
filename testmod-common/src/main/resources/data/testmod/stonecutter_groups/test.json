@@ -1,0 +1,10 @@
+{
+  "minecraft:stone": 8,
+  "minecraft:stone_slab": 4,
+  "minecraft:stone_stairs": 6,
+  "minecraft:snow": 1,
+  "minecraft:obsidian": {
+    "units": 320,
+    "nbt": "{Test: \"test successful\"}"
+  }
+}

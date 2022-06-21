@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "stonecutter_groups_test",
+  "version": "1.0.0",
+  "name": "Stonecutter Groups Test",
+  "description": "Provides a new group-based method of creating stonecutter recipes.",
+  "authors": [
+    "Tropheus Jay"
+  ],
+  "contact": {
+    "sources": "https://github.com/TropheusJ/stonecutter-groups"
+  },
+  "license": "MIT",
+  "icon": "assets/stonecutter_groups_test/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.tropheusj.stonecutter_groups_test.fabric.StonecutterGroupsTestFabric"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19"
+  }
+}

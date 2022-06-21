@@ -5,6 +5,7 @@
   "client": [
   ],
   "mixins": [
+    "StonecutterMenuMixin"
   ],
   "injectors": {
     "defaultRequire": 1

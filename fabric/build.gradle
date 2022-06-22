@@ -25,6 +25,8 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+    include("com.github.LlamaLad7:MixinExtras:0.0.11")
 }
 
 processResources {

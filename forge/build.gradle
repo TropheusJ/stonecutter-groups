@@ -29,6 +29,8 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+
+    shadowCommon("com.github.LlamaLad7:MixinExtras:0.0.11")
 }
 
 processResources {
@@ -45,6 +47,8 @@ shadowJar {
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
+
+    relocate("com.llamalad7.mixinextras", "io.github.tropheusj.stonecutter_groups.shadow.com.llamalad7.mixinextras")
 }
 
 remapJar {

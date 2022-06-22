@@ -25,6 +25,8 @@ subprojects {
                 setNameSyntheticMembers(false)
             }
         }
+        implementation("com.github.LlamaLad7:MixinExtras:0.0.11")
+        annotationProcessor("com.github.LlamaLad7:MixinExtras:0.0.11")
     }
 }
 
@@ -41,6 +43,7 @@ allprojects {
     version = project.mod_version.replace("<build>", patch)
 
     repositories {
+        maven { url = "https://jitpack.io" }
     }
 
     tasks.withType(JavaCompile) {

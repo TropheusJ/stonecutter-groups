@@ -25,7 +25,8 @@ import java.util.Map.Entry;
 public class StonecutterGroupParser {
 	@Nullable
 	public static StonecutterGroup parse(JsonObject json, ResourceLocation id) {
-		Builder<StonecutterGroupEntry> builder = ImmutableList.builder();
+		List<StonecutterGroupEntry> entries = new ArrayList<>();
+		StonecutterGroup group = new StonecutterGroup(entries);
 		for (Entry<String, JsonElement> entry : json.entrySet()) {
 			JsonElement element = entry.getValue();
 			String key = entry.getKey().trim();
@@ -39,21 +40,20 @@ public class StonecutterGroupParser {
 				if (items == null)
 					continue;
 				for (ItemStack stack : items) {
-					builder.add(new StonecutterGroupEntry(stack, units));
+					entries.add(new StonecutterGroupEntry(stack, units, group));
 				}
 			} else {
 				ItemStack stack = parseItem(key, element, id);
 				if (stack == null)
 					continue;
-				builder.add(new StonecutterGroupEntry(stack, units));
+				entries.add(new StonecutterGroupEntry(stack, units, group));
 			}
 		}
-		List<StonecutterGroupEntry> stacks = builder.build();
-		if (stacks.isEmpty()) {
+		if (entries.isEmpty()) {
 			StonecutterGroups.LOGGER.error("Stonecutter group [{}] is empty!", id);
 			return null;
 		}
-		return new StonecutterGroup(stacks);
+		return group;
 	}
 
 	@Nullable

@@ -1,0 +1,4 @@
+{
+  "stonecutter_groups.requirement": "Requires %s %s",
+  "stonecutter_groups.craftable": "Can craft %s"
+}

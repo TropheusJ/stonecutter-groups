@@ -1,1 +1,7 @@
 accessWidener   v2  named
+
+transitive-extendable class net/minecraft/world/item/crafting/Ingredient
+transitive-accessible method net/minecraft/world/item/crafting/Ingredient <init> (Ljava/util/stream/Stream;)V
+
+transitive-accessible class net/minecraft/world/item/crafting/Ingredient$ItemValue
+transitive-accessible method net/minecraft/world/item/crafting/Ingredient$ItemValue <init> (Lnet/minecraft/world/item/ItemStack;)V

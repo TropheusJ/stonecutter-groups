@@ -44,6 +44,7 @@ allprojects {
 
     repositories {
         maven { url = "https://jitpack.io" }
+        maven { url = "https://mvn.devos.one/snapshots/" }
     }
 
     tasks.withType(JavaCompile) {

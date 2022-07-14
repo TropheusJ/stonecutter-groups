@@ -27,6 +27,7 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
     include("com.github.LlamaLad7:MixinExtras:0.0.11")
+    modImplementation(include("io.github.tropheusj:serialization-hooks:${rootProject.serialization_hooks_version}")) { transitive false }
 }
 
 processResources {

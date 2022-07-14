@@ -7,6 +7,7 @@
     "StonecutterScreenMixin"
   ],
   "mixins": [
+    "RecipeManagerMixin",
     "StonecutterMenuMixin"
   ],
   "injectors": {

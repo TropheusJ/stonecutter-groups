@@ -25,4 +25,6 @@ dependencies {
     implementation project(path: ":fabric", configuration: "namedElements")
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     common(project(path: ":testmod-common", configuration: "namedElements")) { transitive false }
+
+    modImplementation(include("io.github.tropheusj:serialization-hooks:${rootProject.serialization_hooks_version}")) { transitive false }
 }

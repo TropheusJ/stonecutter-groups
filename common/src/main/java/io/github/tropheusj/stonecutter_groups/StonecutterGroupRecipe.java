@@ -10,23 +10,20 @@ import net.minecraft.world.level.Level;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Despite the name, this class is only actually used as an intermediary storage for a group of StonecutterRecipes.
  */
 public class StonecutterGroupRecipe implements Recipe<Container> {
-	// used to generate unique IDs
-	public static final AtomicInteger COUNTER = new AtomicInteger();
-
 	public final ResourceLocation id;
 	public final List<StonecutterRecipe> recipes;
 
 	public StonecutterGroupRecipe(ResourceLocation id, List<GroupEntry> entries) {
 		this.id = id;
 		this.recipes = new ArrayList<>();
-		for (GroupEntry entry : entries) {
-			ResourceLocation recipeId = StonecutterGroups.id(id.getPath() + "/" + COUNTER.getAndIncrement());
+		for (int i = 0; i < entries.size(); i++) {
+			GroupEntry entry = entries.get(i);
+			ResourceLocation recipeId = StonecutterGroups.id(id.getNamespace() + "_" + id.getPath() + "/" + i);
 			String group = id.getNamespace() + "/" + id.getPath();
 			ItemStack output = entry.stack();
 			Ingredient input = Utils.groupToIngredient(entries, entry);
